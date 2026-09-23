@@ -127,6 +127,8 @@ phone.addEventListener('input',()=>{
  phone.value=phone.value.replace(/\D/g,'').slice(0,11);
 });
 
+const GOOGLE_SHEET_URL='https://script.google.com/macros/s/AKfycbzfqrfHPx7Md-dKYkzXoF45_B6mz_6aLENZCrsk16fKw6mKF14Xg3vpKXlJbEvffpVa/exec';
+
 document.getElementById('form').addEventListener('submit',e=>{
  e.preventDefault();
 
@@ -157,9 +159,27 @@ document.getElementById('form').addEventListener('submit',e=>{
  document.getElementById('sProduct').textContent='Rs. '+(unit*n).toLocaleString();
  document.getElementById('ta').textContent='Rs. '+(unit*n+delivery).toLocaleString();
 
- document.getElementById('site').style.display='none';
- document.getElementById('thanks').style.display='block';
- window.scrollTo(0,0);
+ const orderData={
+ name:document.getElementById('name').value.trim(),
+ phone:phone.value,
+ city:document.getElementById('city').value.trim(),
+ address:document.getElementById('address').value.trim(),
+ nearestPlace:document.getElementById('landmark').value.trim(),
+ product:'Back Posture Corrector Belt',
+ quantity:n,
+ productPrice:unit*n,
+ deliveryCharges:delivery,
+ totalAmount:unit*n+delivery,
+ orderNumber:orderNo
+};
+
+// Save the order to Google Sheets. The confirmation page is shown after the request is sent.
+fetch(GOOGLE_SHEET_URL,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify(orderData)})
+ .catch(()=>{});
+
+document.getElementById('site').style.display='none';
+document.getElementById('thanks').style.display='block';
+window.scrollTo(0,0);
 });
 </script>
 </body>
