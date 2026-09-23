@@ -12,7 +12,7 @@
 .section{padding:70px 0}.white{background:#fff}.sectionTitle{text-align:center;font-size:34px;letter-spacing:-1px;margin:0 0 10px}.sectionSub{text-align:center;color:#68717a;margin:0 auto 35px;max-width:600px;font-size:14px;line-height:1.6}
 .features{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:#dfe3e5;border:1px solid #dfe3e5}.feature{background:#fff;padding:27px 20px;min-height:160px}.num{font-size:11px;color:#e65d27;font-weight:900}.feature h3{font-size:16px;margin:12px 0 7px}.feature p{font-size:12px;color:#6b737a;line-height:1.5;margin:0}
 .showcase{background:#111;color:#fff}.showGrid{display:grid;grid-template-columns:1fr 1fr;gap:45px;align-items:center}.showGrid h2{font-size:40px;line-height:1.05;margin:0 0 15px}.showGrid p{color:#aeb5bb;line-height:1.65;font-size:14px}.checks{margin-top:22px}.checks div{border-top:1px solid #30363c;padding:12px 0;font-size:13px}.checks b{color:#fff}.dealBox{background:#fff;color:#111;padding:34px;border-radius:2px}.dealTop{font-size:11px;font-weight:900;color:#e65d27;letter-spacing:1px}.dealBox h3{font-size:25px;margin:9px 0}.dealPrice{font-size:48px;font-weight:950}.dealOld{text-decoration:line-through;color:#999}.delivery{color:#69727a;font-size:12px;margin:4px 0 20px}.dealBtn{display:block;background:#e65d27;color:#fff;text-decoration:none;text-align:center;padding:16px;font-size:14px;font-weight:900}
-.order{background:#f5f5f2}.orderCard{max-width:760px;margin:auto;background:#fff;border:1px solid #e0e2e3;padding:30px}.form{display:grid;grid-template-columns:1fr 1fr;gap:12px}.field{display:flex;flex-direction:column;gap:6px}.full{grid-column:1/-1}label{font-size:10px;font-weight:900;letter-spacing:.5px}input,select{padding:14px;border:1px solid #d5d9dc;background:#fff;font-size:14px;outline:none}input:focus,select:focus{border-color:#111}.summary{margin-top:18px;border-top:1px solid #ddd}.row{display:flex;justify-content:space-between;padding:9px 0;font-size:13px}.total{border-top:1px solid #111;font-size:19px;font-weight:950;margin-top:4px;padding-top:13px}.orderBtn{width:100%;background:#111;color:#fff;border:0;padding:17px;font-weight:900;margin-top:12px;cursor:pointer}
+.order{background:#f5f5f2;padding-top:45px;padding-bottom:45px}.orderCard{max-width:760px;margin:auto;background:#fff;border:1px solid #e0e2e3;padding:30px}.form{display:grid;grid-template-columns:1fr 1fr;gap:12px}.field{display:flex;flex-direction:column;gap:6px}.full{grid-column:1/-1}label{font-size:10px;font-weight:900;letter-spacing:.5px}input,select{padding:14px;border:1px solid #d5d9dc;background:#fff;font-size:14px;outline:none}input:focus,select:focus{border-color:#111}.summary{margin-top:18px;border-top:1px solid #ddd}.row{display:flex;justify-content:space-between;padding:9px 0;font-size:13px}.total{border-top:1px solid #111;font-size:19px;font-weight:950;margin-top:4px;padding-top:13px}.orderBtn{width:100%;background:#111;color:#fff;border:0;padding:17px;font-weight:900;margin-top:12px;cursor:pointer}
 .reviewTicker{background:#e65d27;color:#fff;overflow:hidden;white-space:nowrap;padding:13px 0;font-size:12px;font-weight:900}.reviewTrack{display:inline-block;padding-left:100%;animation:move 30s linear infinite}.reviewTrack span{margin:0 45px}
 .reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.review{background:#f5f5f2;padding:23px}.stars{color:#e65d27;letter-spacing:2px}.review p{font-size:13px;line-height:1.6;color:#4e5861}.review b{font-size:11px}
 .footer{background:#111;color:#777;text-align:center;padding:25px;font-size:11px}
@@ -38,6 +38,18 @@
 
 <div class="strip"><div class="wrap stripGrid"><div>✓<b>ADJUSTABLE</b><small>Comfortable fit</small></div><div>◈<b>METAL SUPPORT</b><small>Structured back panel</small></div><div>↕<b>SHOULDER SUPPORT</b><small>Everyday wear</small></div><div>▣<b>BREATHABLE</b><small>Mesh-style design</small></div></div></div>
 
+<section class="section order" id="order"><div class="wrap"><h2 class="sectionTitle">Order Yours Today</h2><p class="sectionSub">Cash on Delivery • Rs. 900 Product Price • Rs. 200 Delivery</p>
+<div class="orderCard"><form id="form"><div class="form">
+<div class="field full"><label>FULL NAME</label><input required placeholder="Your full name"></div>
+<div class="field"><label>PHONE NUMBER</label><input required placeholder="03XXXXXXXXX" inputmode="tel"></div>
+<div class="field"><label>CITY</label><input required placeholder="Your city"></div>
+<div class="field full"><label>COMPLETE ADDRESS</label><input required placeholder="House / Street / Area"></div>
+<div class="field full"><label>LANDMARK (OPTIONAL)</label><input placeholder="Nearby landmark"></div>
+<div class="field"><label>QUANTITY</label><select id="qty"><option value="1">1 Belt</option><option value="2">2 Belts</option><option value="3">3 Belts</option></select></div>
+</div>
+<div class="summary"><div class="row"><span>Product</span><b id="pp">Rs. 900</b></div><div class="row"><span>Delivery</span><b>Rs. 200</b></div><div class="row total"><span>Total</span><b id="tt">Rs. 1,100</b></div></div>
+<button class="orderBtn" type="submit">CONFIRM ORDER</button></form></div></div></section>
+
 <section class="section white"><div class="wrap">
 <h2 class="sectionTitle">Designed With Purpose</h2><p class="sectionSub">Simple support features combined in one adjustable design for everyday use.</p>
 <div class="features">
@@ -62,17 +74,7 @@
 <div class="review"><div class="stars">★★★★★</div><p>“Good fitting and simple to wear. Delivery was quick.”</p><b>— Sana M.</b></div>
 </div></div></section>
 
-<section class="section order" id="order"><div class="wrap"><h2 class="sectionTitle">Order Yours Today</h2><p class="sectionSub">Cash on Delivery • Rs. 900 Product Price • Rs. 200 Delivery</p>
-<div class="orderCard"><form id="form"><div class="form">
-<div class="field full"><label>FULL NAME</label><input required placeholder="Your full name"></div>
-<div class="field"><label>PHONE NUMBER</label><input required placeholder="03XXXXXXXXX" inputmode="tel"></div>
-<div class="field"><label>CITY</label><input required placeholder="Your city"></div>
-<div class="field full"><label>COMPLETE ADDRESS</label><input required placeholder="House / Street / Area"></div>
-<div class="field full"><label>LANDMARK (OPTIONAL)</label><input placeholder="Nearby landmark"></div>
-<div class="field"><label>QUANTITY</label><select id="qty"><option value="1">1 Belt</option><option value="2">2 Belts</option><option value="3">3 Belts</option></select></div>
-</div>
-<div class="summary"><div class="row"><span>Product</span><b id="pp">Rs. 900</b></div><div class="row"><span>Delivery</span><b>Rs. 200</b></div><div class="row total"><span>Total</span><b id="tt">Rs. 1,100</b></div></div>
-<button class="orderBtn" type="submit">CONFIRM ORDER</button></form></div></div></section>
+
 <div class="footer">© Back Posture Corrector Belt • All Rights Reserved</div>
 </div>
 
